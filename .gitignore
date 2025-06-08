@@ -1,0 +1,23 @@
+# OS関連のファイル（OSが自動で作るファイル）
+.DS_Store
+Thumbs.db
+
+# エディタ関連のファイル（コードエディタが作る一時ファイル）
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログファイル（エラーや動作の記録ファイル）
+*.log
+
+# 一時ファイル
+*.tmp
+*.temp
+
+# node_modules（将来JavaScriptのライブラリを使う場合）
+node_modules/
+
+# 設定ファイル（個人的な設定）
+.env
+.env.local 

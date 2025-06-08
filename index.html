@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Your images</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cell {
+      position: relative;
+      background: #eee;
+      width: 100%;
+      padding-top: 100%; /* 正方形にする */
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .cell img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 14px;
+    }
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>your images</h1>
+
+<div class="grid" id="grid">
+  <!-- ここに9個のマスを作る -->
+</div>
+
+<input type="file" id="fileInput" accept="image/*">
+
+<script>
+  const categories = ["動物", "場所", "植物", "キャラクター", "季節", "趣味", "食べ物", "色", "飲み物"];
+  const grid = document.getElementById('grid');
+  const fileInput = document.getElementById('fileInput');
+  let selectedCell = null;
+
+  // 9個のマスを作る
+  categories.forEach((category, index) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.dataset.index = index;
+
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.innerText = category;
+
+    cell.appendChild(label);
+    grid.appendChild(cell);
+
+    // クリックしたらファイル選択
+    cell.addEventListener('click', () => {
+      selectedCell = cell;
+      fileInput.click();
+    });
+  });
+
+  // ファイル選択後、画像表示
+  fileInput.addEventListener('change', (event) => {
+    if (selectedCell && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+
+        // 既に画像があるなら置き換え
+        const existingImg = selectedCell.querySelector('img');
+        if (existingImg) {
+          existingImg.src = e.target.result;
+        } else {
+          selectedCell.appendChild(img);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+</body>
+</html>
