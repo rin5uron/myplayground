@@ -1,0 +1,56 @@
+language: Japanese
+character_code: UTF-8
+
+command_phrases:
+  readme_creation:
+    phrase: "readmeを書いて"
+    action: |
+      1. README.mdの存在確認
+         - 既存のREADME.mdがある場合：README_original.mdにリネーム
+         - 既存のREADME.mdがない場合：そのまま次のステップへ
+      2. 新しいREADME.mdを以下のツール実践記録フォーマットで作成:
+      
+      ### 📅 YYYY/MM/DD ツール名
+      
+      **📋 基本情報**
+      - ツール名：
+      - バージョン：
+      - 公式GitHub：
+      - 作者ブログ記事：
+      - インストール方法：
+      
+      <br>
+      
+      **🎯 試した目的**
+      - 
+      
+      <br>
+      
+      **⚙️ 実行した内容**
+      - 
+      
+      <br>
+      
+      **💡 学んだこと**
+      - 
+      
+      <br>
+      
+      **😊 感想・評価**
+      - 良かった点：
+      - 気になった点：
+      - 総合評価：★★★☆☆
+      
+      <br>
+      
+      **🔗 参考になったリソース**
+      - 
+      
+      <br>
+      
+      **📝 今後の活用予定**
+      - 
+    notes: "ツール試用時の記録作成用。元READMEがある場合は_originalとして保存、ない場合は新規作成"
+
+rules:
+  - "AIは「readmeを書いて」コマンドを受けた時、上記のフォーマットに従ってREADME作成作業を実行する"
