@@ -11,11 +11,16 @@
 
 ## 🚀 Recent Experiments
 
+### 2025-08
+| Project | Tech Stack | Status | Note |
+|---------|------------|--------|------|
+| **STTInput** | - | 乗り換え | 上手く起動せず、AquaVoiceに切り替え |
+
 ### 2025-07
 | Project | Tech Stack | Status | Note |
 |---------|------------|--------|------|
-| **STTInput** | Swift, Whisper, ffmpeg | ✅ 完成 | ローカル音声認識システム |
-| **kiro** | Kiro AI, Markdown, GitHub | �� 構想中 | AI駆動IT用語辞典構築 |
+| **STTInput** | Swift, Whisper, ffmpeg | ⚠️ 開発中断 | 正常に起動せず |
+| **kiro** | Kiro AI, Markdown, GitHub | 📝 構想中 | AI駆動IT用語辞典構築 |
 
 ### 2025-06  
 | Project | Tech Stack | Status | Note |
